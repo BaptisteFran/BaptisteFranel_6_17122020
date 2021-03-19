@@ -2,7 +2,7 @@
 
 ### Features to be added
 
-####### Droits administrateurs
+###### Droits administrateurs
   - Accès pour supprimer ou modifier les tables.
   - Accès pour éditer le contenu de la base de données.
 
