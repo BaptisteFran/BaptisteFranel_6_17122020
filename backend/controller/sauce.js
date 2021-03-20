@@ -88,14 +88,27 @@ exports.likeSauce = (req, res, next) => {
                     })
                     .catch(error => res.status(500).json({ error }));
             } else if (like == 0) {
-                sauce.usersLiked.pull(userId);
-                sauce.usersDisliked.pull(userId);
-                sauce.likes -= 1;
-                sauce.save()
+                if(sauce.usersLiked.includes(userId)) {
+                    sauce.usersLiked.pull(userId);
+                    sauce.likes -= 1;
+                    sauce.save()
                     .then(() => {
-                        res.status(200).json({ message: "L'appreciation a été enlevée" })
+                        res.status(200).json({ message: "Like a été enlevé" })
                     })
                     .catch(error => res.status(500).json({ error }));
+                } else if(sauce.usersDisliked.includes(userId)) {
+                    sauce.usersDisliked.pull(userId);
+                    sauce.dislikes -= 1;
+                    sauce.save()
+                    .then(() => {
+                        res.status(200).json({ message: "Dislike a été enlevé" })
+                    })
+                    .catch(error => res.status(500).json({ error }));
+                }
+                
+                
+                
+               
             }
             else if (like == -1) {
                 ;
