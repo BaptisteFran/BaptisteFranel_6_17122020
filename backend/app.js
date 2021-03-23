@@ -3,9 +3,10 @@ const mongoose = require('mongoose');
 const saucesRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 const path = require('path');
+MY_APP_SECRET = process.env.APP_SECRET;
 
 
-mongoose.connect('mongodb+srv://testuser:v8uHa28dMPvHrYVU@cluster0.e9hf0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect(MY_APP_SECRET,
 {
     
     useNewUrlParser: true,
