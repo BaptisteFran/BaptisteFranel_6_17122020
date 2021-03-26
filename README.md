@@ -16,3 +16,8 @@
 ###### Authentification
 - Toutes les routes relatives à la sauce doivent exiger une demande authentifiée (contenant un
 jeton valide dans son en-tête d'autorisation : "Bearer <token>").
+ 
+ 
+ ###### Mongoose
+ - Gestion des erreurs DB Mongoose
+ - Masquage des données
