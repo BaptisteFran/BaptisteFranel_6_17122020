@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const saucesRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 const path = require('path');
+
 MY_APP_SECRET = process.env.APP_SECRET;
 
 
@@ -20,8 +21,11 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+    res.setHeader('Content-Security-Policy', "default-src 'none'; font-src 'none'; img-src 'none'; script-src 'none'; style-src 'none'; frame-src 'none'");
     next();
 })
+
+
 
 app.use(express.json());
 

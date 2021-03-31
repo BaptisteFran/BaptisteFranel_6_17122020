@@ -1,6 +1,8 @@
 const http = require('http');
 const app = require('./app');
+const fs = require('fs');
 const MY_PORT = process.env.PORT;
+const credentials = fs.readFileSync('env/admin.pem');
 
 const normalizePort = val => {
     const port = parseInt(val, 10);
