@@ -2,3 +2,7 @@
 backend/env/.env
 backend/env/.env.dev
 backend/env/.env.prod
+*.pem
+P6_01_lienGithub.txt
+P6_01_lienGithub.zip
+P6_02_backend.zip
