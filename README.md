@@ -19,5 +19,5 @@ jeton valide dans son en-tête d'autorisation : "Bearer <token>").
  
  
  ###### Mongoose
- - Gestion des erreurs DB Mongoose
+ ~~- Gestion des erreurs DB Mongoose~~
  - Masquage des données
