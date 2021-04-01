@@ -33,3 +33,18 @@ PORT = 3000
 - NodeJS : Serveur
 - Express : Plugins pour création API
 - Mongoose : Simplifie les envois de données MongoDB (avec des schemas par exemple)
+
+#### Routes
+- Les routes sont faites pour rediriger les requêtes de l'utilisateur vers la bonne fonction
+
+#### Controller
+- Les controllers sont des fichiers ou les fonctions font le plus gros du travail (C'est la base des fonctions)
+
+#### Models
+- Les models sont la pour formater les données
+
+#### Middleware
+- Les middleware utilisés sont Auth et Multer :
+     - Auth nous permet de générer un token unique pendant 24h pour pouvoir accéder au contenu de l'API (et du site)
+     - Multer est le middleware qui gère la création des images
+     
