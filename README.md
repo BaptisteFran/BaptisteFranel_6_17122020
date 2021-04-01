@@ -27,3 +27,9 @@ PORT = 3000
 - Dans votre terminal qui doit normalement être dans projet\backend\ tapez npm run prod
 - Lancez le serveur Angular
 - Utilisez l'application !
+
+
+### Plugins :
+- NodeJS : Serveur
+- Express : Plugins pour création API
+- Mongoose : Simplifie les envois de données MongoDB (avec des schemas par exemple)
