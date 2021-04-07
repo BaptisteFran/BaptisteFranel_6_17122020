@@ -7,7 +7,7 @@
 - Créer un dossier backend à la racine du projet (vous devriez avoir un dossier backend et un dossier frontend
 - Décompresser les fichiers dans le dossier backend
 
-##### Installation de l'API
+###### Installation de l'API
 - Dans votre terminal préféré, rentrez dans le dossier backend (cd .\backend)
 - tapez la commande npm init
 - Créez un dossier .env à la racine du dossier backend
@@ -23,7 +23,7 @@ PORT = 3000
 - Copiez collez dans le fichier .env-prod le contenu du fichier texte trouvé dans les livrables
 
 
-#### Lancement du projet
+###### Lancement du projet
 - Dans votre terminal qui doit normalement être dans projet\backend\ tapez npm run prod
 - Lancez le serveur Angular
 - Utilisez l'application !
