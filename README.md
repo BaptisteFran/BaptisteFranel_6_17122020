@@ -29,7 +29,7 @@ PORT = 3000
 - Utilisez l'application !
 
 
-### Plugins :
+### Dépendances :
 - NodeJS : Serveur
 - Express : Plugins pour création API
 - Mongoose : Simplifie les envois de données MongoDB (avec des schemas par exemple)
@@ -47,4 +47,7 @@ PORT = 3000
 - Les middleware utilisés sont Auth et Multer :
      - Auth nous permet de générer un token unique pendant 24h pour pouvoir accéder au contenu de l'API (et du site)
      - Multer est le middleware qui gère la création des images
+
+#### Plugins
+- Helmet permet de sécuriser l'application grâce à plusieurs HTTP Headers
      
