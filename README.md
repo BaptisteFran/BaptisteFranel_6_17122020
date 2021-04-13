@@ -49,5 +49,15 @@ PORT = 3000
      - Multer est le middleware qui gère la création des images
 
 #### Plugins
-- Helmet permet de sécuriser l'application grâce à plusieurs HTTP Headers
+- app.disable("x-powered-by") : permet de ne pas indiquer de quel sorte de serveur il s'agit
+- helmet : Middleware qui permet de sécurité plusieurs HTTP Headers
+- JSON.parse() est utilisé au lieu de eval() qui permet d'éviter les injections
+- Le mot de passe utiliser bcrypt qui permet de hasher le mot de passe (dans notre cas 10 fois)
+- Le RegEx utilisé pour le mot de passe permet de le renforcer
+- CORS : Middleware qui permet d'empêcher des ressources de requêtes venant d'un autre domaine, d'être utilisées sur le site
+- Auth : Le middleware utilisé permet de vérifier si une authorisation est donnée pour l'utilisateur (router.get('/', auth, sauceCtrl.getAllSauce);)
+- jsonwebtoken : Permet de sécuriser l'échange de token par la vérification de l'intégrité des données grâce à une signature numérique. Cela empeche les attaques CSRF
+
+
+
      
