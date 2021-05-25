@@ -1,6 +1,5 @@
 const Sauce = require('../models/sauce');
 const fs = require('fs');
-const sauce = require('../models/sauce');
 
 
 exports.getAllSauce = (req, res, next) => {
@@ -70,7 +69,7 @@ exports.deleteSauce = (req, res, next) => {
             })
         })
         .catch(error => res.status(500).json({ error }));
-};
+
 
 // likes
 
