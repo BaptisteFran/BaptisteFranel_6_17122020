@@ -71,54 +71,50 @@ exports.deleteSauce = (req, res, next) => {
         .catch(error => res.status(500).json({ error }));
 
 
-// likes
+    // likes
 
-exports.likeSauce = (req, res, next) => {
-    const userId = req.body.userId;
-    const like = req.body.like;
-    Sauce.findOne({ _id: req.params.id })
-        .then(sauce => {
-            if (like == 1) {
-                sauce.usersLiked.push(userId);
-                sauce.likes += 1;
-                sauce.save()
-                    .then(() => {
-                        res.status(200).json({ message: 'Sauce likée !' })
-                    })
-                    .catch(error => res.status(500).json({ error }));
-            } else if (like == 0) {
-                if(sauce.usersLiked.includes(userId)) {
-                    sauce.usersLiked.pull(userId);
-                    sauce.likes -= 1;
+    exports.likeSauce = (req, res, next) => {
+        const userId = req.body.userId;
+        const like = req.body.like;
+        Sauce.findOne({ _id: req.params.id })
+            .then(sauce => {
+                if (like == 1) {
+                    sauce.usersLiked.push(userId);
+                    sauce.likes += 1;
                     sauce.save()
-                    .then(() => {
-                        res.status(200).json({ message: "Like a été enlevé" })
-                    })
-                    .catch(error => res.status(500).json({ error }));
-                } else if(sauce.usersDisliked.includes(userId)) {
-                    sauce.usersDisliked.pull(userId);
-                    sauce.dislikes -= 1;
-                    sauce.save()
-                    .then(() => {
-                        res.status(200).json({ message: "Dislike a été enlevé" })
-                    })
-                    .catch(error => res.status(500).json({ error }));
+                        .then(() => {
+                            res.status(200).json({ message: 'Sauce likée !' })
+                        })
+                        .catch(error => res.status(500).json({ error }));
+                } else if (like == 0) {
+                    if (sauce.usersLiked.includes(userId)) {
+                        sauce.usersLiked.pull(userId);
+                        sauce.likes -= 1;
+                        sauce.save()
+                            .then(() => {
+                                res.status(200).json({ message: "Like a été enlevé" })
+                            })
+                            .catch(error => res.status(500).json({ error }));
+                    } else if (sauce.usersDisliked.includes(userId)) {
+                        sauce.usersDisliked.pull(userId);
+                        sauce.dislikes -= 1;
+                        sauce.save()
+                            .then(() => {
+                                res.status(200).json({ message: "Dislike a été enlevé" })
+                            })
+                            .catch(error => res.status(500).json({ error }));
+                    }
                 }
-                
-                
-                
-               
-            }
-            else if (like == -1) {
-                ;
-                sauce.usersDisliked.push(userId);
-                sauce.dislikes += 1;
-                sauce.save()
-                    .then(() => {
-                        res.status(200).json({ message: 'Beurk !' })
-                    })
-                    .catch(error => res.status(500).json({ error }));
-            }
-        })
-        .catch(error => res.status(500).json({ error }));
+                else if (like == -1) {
+                    sauce.usersDisliked.push(userId);
+                    sauce.dislikes += 1;
+                    sauce.save()
+                        .then(() => {
+                            res.status(200).json({ message: 'Beurk !' })
+                        })
+                        .catch(error => res.status(500).json({ error }));
+                }
+            })
+            .catch(error => res.status(500).json({ error }));
+    }
 }
